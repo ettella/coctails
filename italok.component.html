@@ -1,0 +1,41 @@
+
+<div class="row m-2">
+    <div class="col-6 m-2">
+
+        <h2 class="narancs">Koktélok:</h2>
+        <ul>
+            <li *ngFor="let k of coctails"> {{ k }} 
+            <button class="btn btn-outline-danger p-1 m-2 btn-sm"
+            (click)="ktorol(k)"
+            >Koktél Törlése</button>
+        </li>
+
+        </ul>
+
+        <hr>
+
+        <h5 class="m-2">További koktél megadása: </h5>
+        <input type="text"
+            class="form-control"
+            id="koktel-nev"
+            #koktelNevInput
+            [(ngModel)]="koktelNev"
+                        >
+        <br>
+
+        <span> Beirt koktél neve: {{ koktelNev }}</span>
+        <button class="btn btn-success p-1 m-1"
+                (click)="Hozzaadas(koktelNevInput.value)"
+                [disabled]="koktelNev === ''"
+                >Koktél hozzáadása</button>
+
+               
+<!-- (click)="TorolKoktel()" (click)="ktorol($index)"-->
+
+    </div>
+</div>
+
+
+
+
+
